@@ -1,10 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title> YAy desucshtland </title>
-</head>
-<body>
 
+<head>
+	<meta charset="UTF-8">
+	<title>The Wetlands Of Aotearoa (NZ)</title>
+	<meta name="description" content="Help us preserve NZ's wetlands">
+	<meta name="keywords" content="NZ wetlands, conservation">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#9DBAEB">
+	<link href ="assets/stylesheet.css" rel="stylesheet" type="text/css">
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans%7CMargarine&display=swap" rel="stylesheet">
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		
+</head>
+
+<body>			
+		
+		<noscript>
+			<div class = "nojava">Please <a href = "https://www.google.com/support/adsense/bin/answer.py?hl=en&answer=12654" target="_blank">Enable JavaScript</a> in your browser to enjoy all functionalities of this website.</div>
+		</noscript>	
+		
+		<div class="header"><a href = "index.html"><img src = "images/logo.png" alt="The Wetlands Of Aotearoa Logo"></a></div>
+	
+	<!-- Nav -->	
+	
+		<div class = "nav-bar"> 					
+			
+			
+			<div class = "main-nav" id = "mainNav">									
+				<div class = "nav-button-active"> <a href = "index.html">Home</a> </div>
+				<div class = "nav-button"> <a href = "about.html">About Wetlands</a> </div>
+				<div class = "nav-button"> <a href = "visit.html">Wetlands You Can Visit</a> </div>				
+				<div class = "nav-button"> <a href = "involved.html">Get Involved</a> </div>
+			</div>
+			
+			
+			<div class= "mobile-nav" id="mobileNav">
+				<a href="javascript:void(0)" style="font-size:28px;cursor:pointer;color:#FFFFFF;padding:10px;" onclick="closeNav()">&#10005;</a>
+				<a href = "index.html">Home</a> 
+				<a href = "about.html">About Wetlands</a> 
+				<a href = "visit.html">Wetlands You Can Visit</a> 			
+				<a href = "involved.html">Get Involved</a> 
+			</div>
+			
+			<span class="mobile-menu" id="theMenu" onclick="openNav()">
+				<img src = "images/burger.gif" alt="Mobile Menu Icon">
+			</span>			
+			
+		</div>
+		
+		<!-- ENDS Nav -->	
+		
+		
+		<!-- Javascript for Nav -->
+		
+		<script>
+			
+			//when mobile nav icon is clicked
+			function openNav() {		
+				document.getElementById("mobileNav").style.height = "250px";
+				document.getElementById("theMenu").style.visibility = "hidden";		  
+			}
+			
+			//when mobile nav is closed
+			function closeNav() {
+			  document.getElementById("mobileNav").style.height = "0px";
+			  document.getElementById("theMenu").style.visibility = "visible";			
+			}
+			
+			//if window is resized when mobile nav is open			
+			window.onresize = displayWindowSize;
+			
+			function displayWindowSize() {
+			
+				var x = document.getElementById("mainNav");
+				if (window.getComputedStyle(x).display === "flex") {
+					document.getElementById("mobileNav").style.height = "0px";
+					document.getElementById("theMenu").style.visibility = "visible";
+				}				
+				
+			}		
+			
+		</script>
+	
+		<!-- ENDS Javascript for Nav -->
+		
+		
+		<!-- Page title and image carousal -->
+		
+		<div class="intro-con">
+		
+			<h1 class="center">Help Us to Put the WET Back into Wetlands</h1>
+		
+			
+		
+			<div class="slideshow-container">
+
+				<div class="mySlides fade">
+				  <div class="numbertext">1 / 3</div>
+				  <img src="images/home-one.jpg" alt="Intertidal Mud Flats" style="width:100%">
+				  <div class="text"><span class ="img-caption">Intertidal Mud Flats - Ōtuataua Stonefields</span></div>
+				</div>
+
+				<div class="mySlides fade">
+				  <div class="numbertext">2 / 3</div>
+				  <img src="images/home-two.jpg" alt="Marshland" style="width:100%">
+				  <div class="text"><span class ="img-caption">Marshland - Ambury Regional Park</span></div>
+				</div>
+
+				<div class="mySlides fade">
+				  <div class="numbertext">3 / 3</div>
+				  <img src="images/home-three.jpg" alt="Mangrove Cove" style="width:100%">
+				  <div class="text"><span class ="img-caption">Mangrove Cove - Māngere Inlet</span></div>
+				</div>
+
+				<a class="prev" onclick="plusSlides(-1)">❮</a>
+				<a class="next" onclick="plusSlides(1)">❯</a>
+
+			</div> <br>
+
+			<div style="text-align:center">
+			  <span class="dot" onclick="currentSlide(1)"></span> 
+			  <span class="dot" onclick="currentSlide(2)"></span> 
+			  <span class="dot" onclick="currentSlide(3)"></span> 
+			</div>
+			
+			
+			
+			<!-- Javascript to make image carousel work -->
+			<script>
+				let slideIndex = 1;
+				showSlides(slideIndex);
+
+				function plusSlides(n) {
+				  showSlides(slideIndex += n);
+				}
+
+				function currentSlide(n) {
+				  showSlides(slideIndex = n);
+				}
+
+				function showSlides(n) {
+				  let i;
+				  let slides = document.getElementsByClassName("mySlides");
+				  let dots = document.getElementsByClassName("dot");
+				  if (n > slides.length) {slideIndex = 1}    
+				  if (n < 1) {slideIndex = slides.length}
+				  for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";  
+				  }
+				  for (i = 0; i < dots.length; i++) {
+					dots[i].className = dots[i].className.replace(" active", "");
+				  }
+				  slides[slideIndex-1].style.display = "block";  
+				  dots[slideIndex-1].className += " active";
+				}
+			</script>
+			
+			
+			
+			<!-- Automatic slide show -->
+			
+		<!--	<div class="slideshow-container">
+
+			<div class="mySlides fade">
+			  <div class="numbertext">1 / 3</div>
+			  <img src="images/home-one.jpg" alt="Intertidal Mud Flats" style="width:100%">
+			  <div class="text"><span class ="img-caption">Intertidal Mud Flats - Ōtuataua Stonefields</span></div>
+			</div>
+
+			<div class="mySlides fade">
+			  <div class="numbertext">2 / 3</div>
+			  <img src="images/home-two.jpg"alt="Marshland" style="width:100%">
+			  <div class="text"><span class ="img-caption">Marshland - Ambury Regional Park</span></div>
+			</div>
+
+			<div class="mySlides fade">
+			  <div class="numbertext">3 / 3</div>
+			  <img src="images/home-three.jpg" alt="Mangrove Cove" style="width:100%">
+			  <div class="text"><span class ="img-caption">Mangrove Cove - Māngere Inlet</span></div>
+			</div>
+
+			</div> <br>
+
+			<div style="text-align:center">
+			  <span class="dot"></span> 
+			  <span class="dot"></span> 
+			  <span class="dot"></span> 
+			</div>
+		-->
+			<!-- Ends automatic slide show -->
+
+			<!-- script to make automatic slide show work -->
+			<script>
+			/*	let slideIndex = 0;
+				showSlides();
+
+				function showSlides() {
+				  let i;
+				  let slides = document.getElementsByClassName("mySlides");
+				  let dots = document.getElementsByClassName("dot");
+				  for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";  
+				  }
+				  slideIndex++;
+				  if (slideIndex > slides.length) {slideIndex = 1}    
+				  for (i = 0; i < dots.length; i++) {
+					dots[i].className = dots[i].className.replace(" active", "");
+				  }
+				  slides[slideIndex-1].style.display = "block";  
+				  dots[slideIndex-1].className += " active";
+				  setTimeout(showSlides, 3000); // Change image every 3 seconds
+				}*/
+			</script>
+			
+			
+			
+			
+
+		</div>
+	
+		<!-- ENDS page title and image carousal -->
+	
+		
+		<div class="content-con"><!-- Main page content container -->
+			
+			<h4 class="italic">"The moment you become attached to the water, the ocean you become guardians, kaitiaki."<br>	
+			 <span class= "speech-name">-Debbie Ngarewa-Parker, politician-iwi leader-activist</span>
+			</h4>
+						
+			Wetlands are one of the most threatened ecosystems in NZ, over the last century
+			we have lost 90% of our wetlands. In the Auckland region 25% of the land was covered in wetlands now it is less than 0.5%. Wetlands were thought of as mosquito filled swamps that needed to be drained for farming, new homes and buildings and landfills.
+			
+			<h3>Watch this video on the loss of NZ wetlands</h3>
+			
+			<div class="youtube-large">
+			
+				<iframe src="https://www.youtube.com/embed/HlZvDGQIEQg?si=lZVc2HR6XrnN3NYV" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			
+			</div>
+						
+			
+			<h3>Why are wetlands so important? </h3>
+
+			Wetlands have an important role in maintaining healthy ecosystems. They act like
+			kidneys purifying water from pollutants such as nitrogen from farm run off and controlling flood water. They also act like sponges storing water which is important during droughts and reducing fire risks. <br><br>
+
+			Wetlands are significant storehouses of carbon (carbon sinks). In NZ wetlands support the biggest concentration of wildlife and they are of great cultural and spiritual significance to Māori.
+
+			<h3>Kaitaikitanga and Wetlands</h3>
+
+			Kaitaikitanga means guardianship, protection or preservation. Water is considered a life giver representing the blood of Papatuanuku (Earth Mother) and the tears of Ranginui (Sky Father). Waterways are home to many spiritual beings that look after the people ensuring their physical and spiritual protection. <br><br>
+			
+			<div class="pic-box">
+				<img src="images/pic1.jpg" alt="A Painting Depicting the Traditional Usage of Wetlands">
+			</div>
+			
+			<div class="pic-caption">Image credit: <a href = "https://www.learnz.org.nz/wetlandbiodiversity181/bg-standard-f/value-to-maori" target="_blank">Learnz</a> </div><br>
+			
+			Wetlands provided traditional foods such as tuna (eel), whitebait and watercress. Also, medicines, harakeke and raupo (building materials). As wetlands diminished so did cultural traditions and the ability of Māori to pass knowledge onto the next generations. <br><br> 
+			
+			This practice of kaitiakitanga is about preserving the idea of kinship with nature.<br><br>
+
+			
+			<a href = "about.html">Learn about wetlands in New Zealand <i class="fa fa-angle-double-right"></i></a><br><br>
+			
+		
+		</div><!-- ends main content con -->
+		
+					
+		<div class="footer-con"> 
+			
+			<div class = "footer-link"> <a href = "index.html">Home</a> </div>
+			<div class = "footer-link"> <a href = "about.html">About Wetlands</a> </div>
+			<div class = "footer-link"> <a href = "visit.html">Wetlands You Can Visit</a> </div>				
+			<div class = "footer-link"> <a href = "involved.html">Get Involved</a> </div>		
+		
+		</div>			
+	
 </body>
+
 </html>
